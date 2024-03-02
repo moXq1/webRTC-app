@@ -1,0 +1,94 @@
+.select {
+  width: 100%;
+
+  border-radius: 0.3rem;
+}
+
+.select.isActive .selectOptions {
+  display: block;
+}
+
+.select.isActive .selectTrigger::after {
+  content: "▲";
+}
+
+.selectLabel {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.4rem;
+}
+
+.selectWrapper {
+  position: relative;
+  height: 100%;
+  user-select: none;
+  border: var(--borderStatic);
+  height: 2.5rem;
+}
+
+.selectTrigger {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: var(--background);
+  padding: 0.5rem 0.5rem;
+  cursor: pointer;
+}
+
+.selectTrigger::after {
+  position: absolute;
+  content: "▼";
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  background-color: var(--background);
+}
+
+.selectOptions {
+  position: absolute;
+  list-style: none;
+  inset-inline: 0;
+  top: calc(2.5rem + 0.5rem);
+  display: none;
+  padding: 0.5rem 0;
+  margin: 0;
+  z-index: 1;
+  border: var(--borderStatic);
+  border-radius: 0.4rem;
+  background-color: var(--background);
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.selectOptions.top {
+  top: initial;
+  bottom: calc(2.5rem + 0.5rem);
+}
+
+.selectOption {
+  position: relative;
+  padding: 0.5rem;
+  padding-inline-start: 1.5rem;
+  font-size: 1rem;
+}
+
+.selectText,
+.selectTriggerText {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+.selectTriggerText {
+  -webkit-line-clamp: 1;
+}
+
+.checked,
+.hovered,
+.hov {
+  background-color: oklch(100% 0 0 / 5%);
+  cursor: pointer;
+}

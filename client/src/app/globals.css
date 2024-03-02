@@ -1,0 +1,156 @@
+:root {
+  --max-width: 1100px;
+  --border-radius: 12px;
+  /* --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
+    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
+    "Fira Mono", "Droid Sans Mono", "Courier New", monospace; */
+  --font-mono: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+
+  --red: #ff3227;
+}
+
+.theme {
+  min-height: 100vh;
+}
+
+/* font-family: 'Roboto Mono', sans-serif;
+color: #0e4aff;
+text-shadow: 0px 0 10px #0e4aff, 0 0px #0e4aff, 0px 0 #0e4aff, 0 0px #0e4aff;
+font-style: italic; */
+
+:root:has(.theme[data-theme="dark"]) {
+  --text: oklch(97.93% 0.003 84.56);
+  --background: oklch(13.33% 0.024 298.68);
+  --primary: oklch(70.46% 0.128 287.78);
+  --primary: oklch(66.33% 0.2796984684368664 347.1286944811016);
+  --secondary: oklch(23.5% 0 0);
+  --accent: oklch(88.37% 0.176 115.76);
+  --grad: linear-gradient(-20deg, rgba(255, 255, 255, 0.15), #052472),
+    linear-gradient(45deg, var(--accent), var(--primary) 80%);
+
+  --borderStatic: 1px solid rgba(255, 255, 255, 0.1);
+}
+:root:has(.theme[data-theme="light"]) {
+  --text: oklch(0% 0 0);
+  --background: oklch(97.93% 0.003 84.56);
+  --primary: oklch(0.86 0.09 226.67);
+  --secondary: oklch(95.61% 0.017 259.42);
+  --accent: oklch(67.21% 0.189 27.75);
+  --grad: linear-gradient(-20deg, rgba(255, 255, 255, 0.15), var(--secondary)),
+    linear-gradient(45deg, var(--accent), var(--primary) 80%);
+
+  --borderStatic: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* .theme[data-theme="light"] {
+  --text: oklch(15.16% 0.071 300.1);
+  --background: oklch(97.12% 0.015 306.41);
+  --primary: oklch(50.73% 0.275 292.12);
+  --secondary: oklch(73.18% 0.158 2.21);
+  --accent: oklch(67.21% 0.189 27.75);
+}
+.theme[data-theme="dark"] {
+  --text: oklch(91.84% 0.045 305.26);
+  --background: oklch(10.48% 0.042 308.71);
+  --primary: oklch(49.47% 0.272 290.96);
+  --secondary: oklch(40.11% 0.155 12.58);
+  --accent: oklch(47.8% 0.184 29.75);
+} */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.flow > * + * {
+  margin-block-start: 1em;
+}
+
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  font-family: var(--font-mono);
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
+
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  margin: 0;
+  /* background-color: #f9f7f0; */
+
+  transition: all 0.3s ease;
+  background-color: var(--background);
+  color: var(--text);
+  /* overflow: auto; */
+}
+
+h1 {
+  font-size: clamp(1.25rem, 0.7432rem + 1.6216vi, 2rem);
+}
+
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* @media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+} */

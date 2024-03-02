@@ -1,0 +1,66 @@
+.container {
+  position: relative;
+  white-space: nowrap;
+}
+
+.highlight {
+  animation: move-bg 10s ease infinite;
+  background: linear-gradient(
+    135deg,
+    #ee58d2,
+    #f1749c,
+    #e81c90,
+    #ee95f4,
+    #ad2ae9
+  );
+  background-size: 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space: nowrap;
+}
+
+@keyframes move-bg {
+  from {
+    background-position: 0% 50%;
+  }
+
+  to {
+    background-position: -300% 50%;
+  }
+}
+
+.emj {
+  --size: clamp(20px, 1.5vw, 30px);
+  width: var(--size);
+  height: var(--size);
+  text-wrap: nowrap;
+  position: absolute;
+  inset-block-start: var(--top);
+  inset-inline-start: var(--left);
+  animation: scale 1700ms ease forwards;
+}
+
+.emj span {
+  opacity: 0.7;
+  animation: rotate 3s linear infinite;
+  color: #ee58d2;
+  display: block;
+}
+
+@keyframes rotate {
+  from {
+    rotate: 0deg;
+  }
+  to {
+    rotate: 360deg;
+  }
+}
+
+@keyframes scale {
+  from {
+    scale: 0;
+  }
+  to {
+    scale: 1;
+  }
+}

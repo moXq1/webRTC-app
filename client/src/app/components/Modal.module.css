@@ -1,0 +1,86 @@
+.btn {
+  background: black;
+  color: transparent;
+  margin-block: 1rem;
+  padding: 1.1rem 2.5rem;
+  padding-inline-start: 2.5rem;
+  padding-inline-end: 3.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 99rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  color: var(--modal-color);
+  margin-inline-start: 2rem;
+  margin-block-end: 2rem;
+  outline-color: #0e4aff;
+}
+
+.dialog {
+  inline-size: min(95vw, 35rem);
+  border-radius: 7px;
+  padding: 0;
+  border: none;
+  background-color: var(--modal-color);
+}
+
+.dialog::backdrop {
+  background-color: #333;
+  opacity: 0.8;
+}
+
+.dialog h2 {
+  padding: 2rem;
+}
+
+.bar {
+  user-select: none;
+  padding: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--modal-bar);
+  color: #0e4aff;
+}
+
+.bar span {
+  font-size: 0.8rem;
+  line-height: 1.15;
+  border-radius: 2rem;
+  padding: 0.55rem 0.8rem 0.4rem;
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--modal-color);
+}
+
+.subhead {
+  font-size: 0.8rem;
+  font-weight: normal;
+  margin-block-start: 0.5rem;
+  font-family: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
+    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
+    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+  letter-spacing: 1px;
+}
+
+.btn div {
+  color: black;
+  border-radius: 50%;
+  width: 0;
+  height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-inline-start: 0.8rem;
+  transition: all 1s ease;
+  background-color: var(--modal-color);
+  rotate: -90deg;
+}
+
+.btn:hover div {
+  width: 1.5rem;
+  height: 1.5rem;
+  rotate: 0deg;
+}

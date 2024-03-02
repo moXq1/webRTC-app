@@ -1,0 +1,70 @@
+.nav {
+  position: fixed;
+  top: 1rem;
+  inset-inline: 0;
+  max-width: 70vw;
+  margin-inline: auto;
+  min-height: 3rem;
+  z-index: 5;
+}
+
+.navContent {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px 20px 40px;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.link {
+  position: relative;
+  text-decoration: none;
+  font-size: calc(
+    var(--framer-font-size, 16px) * var(--framer-font-size-scale, 1)
+  );
+  cursor: pointer;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.link:hover::after {
+  content: "";
+  position: absolute;
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.03) 0%,
+      rgba(255, 255, 255, 0.2) 100%
+    )
+    rgba(255, 255, 255, 0);
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 0.602187px 0.602187px -1.25px,
+    rgba(0, 0, 0, 0.16) 0px 2.28853px 2.28853px -2.5px,
+    rgba(0, 0, 0, 0.063) 0px 10px 10px -3.75px;
+  inset: -10px;
+}
+
+/* .link:active {
+  color: red;
+} */
+
+.logo {
+  position: absolute;
+
+  aspect-ratio: 1;
+  width: 5rem;
+  left: 0;
+}
+
+.logo:hover:after {
+  inset: 10px;
+}

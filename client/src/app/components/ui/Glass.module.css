@@ -1,0 +1,34 @@
+.backdrop {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(15px) url(#R3) saturate(105%);
+  -webkit-backdrop-filter: blur(15px) saturate(105%);
+}
+
+@-moz-document url-prefix() {
+  .backdrop {
+    backdrop-filter: blur(15px) saturate(105%);
+  }
+}
+
+.backdrop::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    225deg,
+    rgba(255, 255, 255, 0.1) 0,
+    rgba(255, 255, 255, 0.1) 24%,
+    rgba(0, 0, 0, 0) 76%
+  );
+  border-radius: 0px;
+}
+
+/* .flex {
+  display: flex;
+  align-items: flex-end;
+  justify-content: fle;
+} */
